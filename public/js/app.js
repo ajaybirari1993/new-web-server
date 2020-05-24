@@ -8,7 +8,7 @@ weatherEle.addEventListener("submit", (e) => {
   let location = searchBox.value;
   console.log(location);
   document.getElementById("result").textContent = "Loading.....";
-  fetch(`http://localhost:3000/weather?address=${location}`)
+  fetch(`/weather?address=${location}`)
     .then((res) => {
       return res.json();
     })
