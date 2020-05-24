@@ -21,7 +21,7 @@ app.use(express.static(publicFolderPath));
 
 app.get("", (req, res) => {
   res.render("index", {
-    title: "Dynamic web page title",
+    title: "Home Page",
   });
 });
 
@@ -35,6 +35,10 @@ app.get("/weather", (req, res) => {
   if (!req.query.address) {
     return res.send({
       error: "You must provide the address",
+    });
+  } else {
+    res.render("about", {
+      title: "Weather Page",
     });
   }
 
